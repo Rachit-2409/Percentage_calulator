@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Percentage Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+                font-family: "Raleway", system-ui;
+                box-sizing: border-box;
+            }
+            #Container{
+                background: linear-gradient(rgb(252, 252, 17), rgb(204, 136, 9));
+                height: 100vh;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+            }
+            #content{
+                padding: 30px;
+                background: #212121;
+            border-radius: 20px;
+                color: #fff;
+            }
+            #content h2{
+                text-align: center;
+                font-size: 34px;
+            }
+            #box{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 15px;
+                margin: 30px 0;
+            }
+            input, #result{
+                background: #333333;
+                padding: 15px;
+                outline: none;
+                border: none;
+                border-radius: 10px;
+                color: #fff;
+                font-size: 23px;
+                text-align: center;
+                min-width: 60px;
+            }
+            button{
+                padding: 10px 20px;
+                margin-left: 50% ;
+                transform: translate(-50%);
+                background: rgb(204, 136, 9) ;
+                border: none;
+                outline: none;
+                color: #fff;
+                border-radius: 10px;
+            }
+            
+        </style>
+</head>
+
+<body>
+    <div id="Container">
+        <div id="content">
+            <h2>Percentage Calculator</h2>
+            <div id="box">
+                <input type="number" id="percentage" placeholder="0"> % of
+                <input type="number" id="value" placeholder="0">
+                is <p id="result">0</p>
+            </div>
+            <button id="btn">Calculate</button>
+            <p id="total_value"></p>
+            
+        </div>
+    </div>
+
+
+<script>
+    let percentage =  document.getElementById('percentage');
+    let value =  document.getElementById('value');
+    let btn = document.getElementById('btn');
+    let display_result = document.getElementById('result');
+    let print_ =  document.getElementById('total_value')
+
+    
+    btn.addEventListener('click', ()=>{
+        if(!percentage.value ==0 && !value.value ==0){
+        let result = ((percentage.value)/100)*(value.value);
+        display_result.innerText = result;
+        print_.innerText =  `${percentage.value} % of ${value.value} = ${result}`
+        }else{
+            alert("Enter a Valid Value")
+        }
+        
+    })
+
+
+</script>
+
+</body>
+
+</html>
